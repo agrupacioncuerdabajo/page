@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupación Cuerdabajo</title>
+    <link rel="icon" href="img/logo cuerdabajo.png">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Font-awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Integrar la fuente desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Three.js y GLTFLoader -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header class="flex items-start justify-between p-6 fixed top-0 w-full z-50 text-white">
+        <div class="flex items-center">
+            <a href="https://cuerdabajo.com"> <!-- Cambia la URL por la que necesites -->
+                <img src="img/ilogotipo.png" alt="Logo Cuerdabajo" class="h-28 -mt-8">
+            </a>
+        </div>
+        
+        <nav class="flex space-x-8 text-lg"> <!-- Aumentado el tamaño del texto -->
+            <a href="#" class="flex items-center hover:text-pink-500">
+                <i class="fas fa-home mr-1"></i> Home
+            </a>
+            <a href="#" class="flex items-center hover:text-pink-500">
+                <i class="fas fa-cog mr-1"></i> Servicios
+            </a>
+            <a href="#" class="flex items-center hover:text-pink-500">
+                <i class="fas fa-users mr-1"></i> Nosotros
+            </a>
+            <a href="#" class="flex items-center hover:text-pink-500">
+                <i class="fas fa-envelope mr-1"></i> Contacto
+            </a>
+            <a href="#" class="flex items-center hover:text-pink-500">
+                <i class="fas fa-images mr-1"></i> Galería
+            </a>
+        </nav>
+    </header>
+
+    <canvas id="3d-canvas" class="absolute top-0 left-0 w-full h-full z-10"></canvas>
+
+    <div id="text1" class="parallax text-left text-white drop-shadow">
+        <h1 class="gradient-text">CUERDA</h1>
+    </div>
+
+    <div id="text2" class="parallax text-right text-white drop-shadow-lg">
+        <h1 class="gradient-text">BAJO</h1>
+    </div>
+
+    <div id="text3" class="parallax text-left text-white z-20">
+        <p class="mt-4 text-4xl">Agrupación Musical Tropical y Parrandera para Todo Tipo de Eventos</p>
+    </div>  
+
+    <a id="buy-button" href="#" class="parallax inline-block text-4xl font-semibold text-white bg-pink-500 py-2 px-6 rounded-full hover:bg-pink-600 transition drop-shadow-xl">
+        Te interesa? →
+    </a>
+
+    <!-- Botón de WhatsApp -->
+    <a href="https://wa.me/3135651518" class="whatsapp-button z-50" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Sección de redes sociales -->
+    <div class="social-icons left-10 z-50">
+        <a href="https://facebook.com" target="_blank">
+            <i class="fab fa-facebook-f hover:text-pink-600 transition drop-shadow-xl"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <i class="fab fa-instagram hover:text-pink-600 transition drop-shadow-xl"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <i class="fab fa-twitter hover:text-pink-600 transition drop-shadow-xl"></i>
+        </a>
+    </div>
+
+    <!-- Script para cargar el modelo 3D y aplicar Parallax -->
+    <script>
+        
+        // Configuración inicial de Three.js
+        let scene = new THREE.Scene();
+        let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('3d-canvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        camera.position.z = 5; // Distancia de la cámara
+        
+
+        // Crear la luz hemisférica (fuente de luz 1 - naranja)
+        const hemiLight = new THREE.HemisphereLight(0xfd9904, 0x404040, 0.5); // Luz hemisférica naranja
+        hemiLight.position.set(0, 10, 0); // Posición de la luz hemisférica
+        scene.add(hemiLight);
+
+        // Crear una luz direccional (fuente de luz 2 - roja)
+        const directionalLight = new THREE.DirectionalLight(0xff0000, 1); // Luz direccional roja
+        directionalLight.position.set(10, 10, 5).normalize(); // Posición de la luz direccional
+        directionalLight.castShadow = true; // Habilitar sombras
+        scene.add(directionalLight);
+
+        // Crear luz blanca frontal (fuente de luz 3)
+        const frontLight = new THREE.DirectionalLight(0xffffff, 1); // Luz direccional blanca
+        frontLight.position.set(0, 5, 10).normalize(); // Posición de la luz blanca frontal
+        frontLight.castShadow = true; // Habilitar sombras
+        scene.add(frontLight);
+
+        // Crear luz ambiental para suavizar la iluminación
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.3); // Luz ambiental suave
+        scene.add(ambientLight);
+
+
+        // Carga del modelo 3D GLTF/GLB
+        let loader = new THREE.GLTFLoader();
+        let model;
+        loader.load('img/icon.glb', function(gltf) {
+            model = gltf.scene;
+            scene.add(model);
+        
+            // Configurar la escala del modelo
+            model.scale.set(3.5, 3.8, 3.5);
+        
+            // Establecer las rotaciones iniciales
+            model.rotation.x = Math.PI / 9;  // Ajusta la rotación en el eje X
+            model.rotation.y = Math.PI / 0.9;  // Ajusta la rotación en el eje Y
+            model.rotation.z = 0;  // Mantén el eje Z sin rotación
+        
+            // Guarda las rotaciones iniciales
+            initialRotationX = model.rotation.x;
+            initialRotationY = model.rotation.y;
+        
+            // Posición centrada
+            model.position.set(2.5, 0, 0);
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        // Variables para controlar el movimiento del modelo 3D
+        let targetRotationX = 0; // Rotación objetivo en el eje X
+        let targetRotationY = 0; // Rotación objetivo en el eje Y
+        let rotationSpeed = 0.05; // Velocidad de rotación suave
+
+        const minRotationX = -Math.PI / 4; // Límite mínimo para el eje X
+        const maxRotationX = Math.PI / 4;  // Límite máximo para el eje X
+        const minRotationY = -Math.PI / 2; // Límite mínimo para el eje Y
+        const maxRotationY = Math.PI / 2;  // Límite máximo para el eje Y
+        // Detectar el movimiento del mouse
+        document.addEventListener('mousemove', (event) => {
+            const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = (event.clientY / window.innerHeight) * 2 - 1;
+
+            // Ajustar las rotaciones inversamente a los movimientos del mouse
+            targetRotationX = mouseY * 0.5; // Ajusta la sensibilidad del eje X
+            targetRotationY = mouseX * 0.5; // Ajusta la sensibilidad del eje Y
+        });
+
+        // Animación y renderizado
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (model) {
+                // Mantén las rotaciones iniciales y añade el ajuste del mouse
+                model.rotation.x += ((initialRotationX + targetRotationX) - model.rotation.x) * rotationSpeed;
+                model.rotation.y += ((initialRotationY + targetRotationY) - model.rotation.y) * rotationSpeed;
+
+                model.rotation.x = Math.max(minRotationX, Math.min(maxRotationX, model.rotation.x));            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Efecto parallax
+        document.addEventListener('mousemove', (event) => {
+            const x = (window.innerWidth - event.pageX) / 100;
+            const y = (window.innerHeight - event.pageY) / 100;
+
+            // Parallax en otros elementos
+            document.getElementById('text1').style.transform = `translate(${x * 2}px, ${y * 2}px)`;
+            document.getElementById('text2').style.transform = `translate(${x * 3}px, ${y * 2}px)`;
+            document.getElementById('text3').style.transform = `translate(${x * 2}px, ${y * 4}px)`;
+            document.getElementById('buy-button').style.transform = `translate(${x * 2}px, ${y * 2}px)`;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+    /* Estilos adicionales */
+    body {
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        background: linear-gradient(135deg, #fd9904, #fa5f5f );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-family: 'Afacad Flux', sans-serif;
+    }
+
+    .parallax {
+        position: absolute;
+        transition: transform 0.1s ease-out;
+    }
+
+    /* Estilos de degradado */
+    .gradient-text {
+        background: linear-gradient(145deg, #ffffff, #e1dfdf, #ffffff, #d0d0d0);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 900;
+        font-size: 20rem;
+    }
+    
+    /* Posicionamiento y márgenes */
+    #text1 {
+        top: -50px;
+        left: 40px;
+        max-width: 80%;
+    }
+
+    #text2 {
+        bottom: 20px;
+        right: 100px;
+        max-width: 50%;
+    }
+
+    #text3 {
+        bottom: 300px;
+        left: 50px;
+        max-width: 40%;
+    }
+
+    #buy-button {
+        bottom: 200px;
+        left: 50px;
+    }
+
+    #product {
+        top: 50%;
+        right: 100px;
+        transform: translateY(-50%);
+    }
+
+    /* Estilos para asegurar la correcta presentación en móviles y desktop */
+    @media (min-width: 768px) {
+        #product {
+            max-width: 400px;
+        }
+    }
+     /* Estilo para el botón de WhatsApp vibrante */
+     .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25D366;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        font-size: 24px;
+        animation: vibrate 1s infinite;
+    }
+
+    @keyframes vibrate {
+        0% { transform: translate(0, 0); }
+        25% { transform: translate(-2px, 0); }
+        50% { transform: translate(-3px, 0); }
+        75% { transform: translate(-2px, 0); }
+        100% { transform: translate(0, 0); }
+    }
+
+    /* Estilo para las redes sociales */
+    .social-icons {
+        position: fixed;
+        bottom: 20px; /* Ajusta según sea necesario */
+        display: flex;
+        gap: 20px; /* Espacio entre los íconos */
+    }
+
+    .social-icons a {
+        color: white; /* Color del ícono en blanco */
+        font-size: 30px; /* Tamaño del ícono */
+        transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+        color: #f0f0f0; /* Cambia el color al pasar el ratón */
+    }
