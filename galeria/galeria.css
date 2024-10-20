@@ -1,0 +1,56 @@
+img {
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    width: 100%;
+    height: 100%;
+}
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+.gallery-item {
+    position: relative; /* Para un mejor posicionamiento */
+    overflow: hidden; /* Para evitar que la imagen sobresalga */
+    aspect-ratio: 1; /* Mantiene la relación de aspecto cuadrada */
+}
+.bg-gradient-custom {
+    background: linear-gradient(135deg, #fd9904, #fa5f5f);
+}
+.bg-gradient-custom {
+    background: linear-gradient(135deg, #fd9904, #fa5f5f);
+}
+/* Gradiente en modo oscuro */
+.dark .bg-gradient-custom {
+    background: #1d242f;
+}
+.header-transition {
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+}
+#desktop-menu {
+    display: none; /* Oculta el menú por defecto */
+}
+
+/* Muestra el menú en pantallas grandes */
+@media (min-width: 1024px) {
+    #desktop-menu {
+        display: flex; /* Muestra el menú en pantallas grandes */
+    }
+}
+/* Estilos por defecto para los enlaces del menú */
+nav a {
+    color: white; /* Color inicial */
+}
+
+/* Cambiar color al hacer hover */
+nav a:hover {
+    color: yellow; /* Color por defecto en hover */
+}
+
+/* Cambiar el color de los enlaces cuando el encabezado está scrolleado */
+.header-scrolled nav a {
+    color: rgb(255, 255, 255); /* Color de texto del menú cuando el fondo cambia */
+}
+
+/* Cambiar el color del hover cuando el encabezado está scrolleado */
+.header-scrolled nav a:hover {
+    color: yellow; /* Color de hover cuando el fondo está activado */
+}

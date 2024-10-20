@@ -1,0 +1,317 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nosotros</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+        <!-- Font-awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../portafolio/portafolio.css">
+        <!-- AOS CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        
+        <style>
+            .bg-gradient-custom {
+                background: linear-gradient(135deg, #fd9904, #fa5f5f);
+            }
+        </style>
+    </head>
+    <body class="bg-gradient-custom bg-gray-100 text-white">
+        <header id="main-header" class="flex items-start justify-between p-6 fixed top-0 w-full z-50 text-white header-transition">
+            <div class="flex items-center">
+                <a href="https://cuerdabajo.com">
+                    <img src="../img/ilogotipo.png" alt="Logo Cuerdabajo" class="max-h-14 w-auto -mt-2"> <!-- Cambia max-h-10 a un valor más pequeño -->
+                </a>
+            </div>
+            
+    
+            <!-- Menú en pantallas grandes -->
+            <nav id="desktop-menu" class=" lg:flex space-x-8 text-lg">
+                <a href="../index.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="../servicios/servicios.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-cog mr-1"></i> Servicios
+                </a>
+                <a href="portafolio.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-users mr-1"></i> Nosotros
+                </a>
+
+                <a href="../galeria/galeria.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-images mr-1"></i> Galería
+                </a>
+            </nav>
+
+            <!-- Botón de menú hamburguesa para pantallas pequeñas -->
+            <div class="lg:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i> <!-- Icono de hamburguesa -->
+                </button>
+            </div>
+
+            <!-- Menú desplegable que estará oculto en móviles por defecto -->
+            <nav id="dropdown-menu" class="absolute right-8 hidden flex-col space-y-4 text-lg bg-gray-800 p-5 text-white mt-4">
+                <a href="../index.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-home mr-1"></i> Home
+                </a>
+                <a href="servicios.html" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-cog mr-1"></i> Servicios
+                </a>
+                <a href="#" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-users mr-1"></i> Nosotros
+                </a>
+                <a href="#" class="flex items-center hover:text-pink-500">
+                    <i class="fas fa-images mr-1"></i> Galería
+                </a>
+            </nav>
+        </header>
+
+        <!-- Nosotros Section -->
+        <section class="flex flex-col md:flex-row items-center justify-center py-44 px-20">
+            <div class="md:w-1/2" data-aos="zoom-in">
+                <img src="../img/img3.jpg" alt="Group Image" class="rounded-lg shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 md:pl-12 mt-8 md:mt-0">
+                <h2 class="text-4xl font-bold text-white mb-4" data-aos="fade-right">Nosotros</h2>
+                <p class="text-lg text-white" data-aos="fade-left">
+                    Cuerdabajo es una <span class="text-pink-500 font-bold">agrupación musical</span> dedicada a animar eventos de todo tipo con una mezcla de géneros que va desde la <span class="text-pink-500 font-bold">parranda tradicional</span> hasta ritmos más modernos, como el <span class="text-pink-500 font-bold">reguetón</span> y la <span class="text-pink-500 font-bold">salsa</span>. Su historia comenzó en diciembre de 2022, cuando un grupo de amigos con una pasión compartida por la música decidieron unirse para llevar alegría y energía a las celebraciones de su comunidad.
+                    <br><br>
+                    Además de su talento musical, Cuerdabajo se caracteriza por su compromiso con la calidad y el <span class="text-pink-500 font-bold">profesionalismo</span>. Cada presentación es una <span class="text-pink-500 font-bold">experiencia única</span>, donde la <span class="text-pink-500 font-bold">música</span> y la <span class="text-pink-500 font-bold">diversión</span> se entrelazan para crear momentos inolvidables. Con la <span class="text-pink-500 font-bold">meta</span> de expandir su influencia y llegar a nuevos horizontes, Cuerdabajo continúa innovando y evolucionando, manteniendo viva la llama de la <span class="text-pink-500 font-bold">música</span> en cada rincón donde se presentan.
+                </p>
+                
+            </div>
+        </section>
+
+        <!-- Integrantes Section -->
+        <section class="py-16 px-4 bg-gray-900" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-orange-600 text-center mb-16">Conoce a Nuestros Integrantes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Integrante 1 -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-full w-48 h-48 mx-auto">
+                        <img src="../img/img2.jpg" alt="Integrante 1" class="w-full h-full object-cover transition-transform transform group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-semibold">John Doe</h3>
+                            <p class="text-lg">Vocalista principal y guitarrista</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Integrante 2 -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-full w-48 h-48 mx-auto">
+                        <img src="../img/img2.jpg" alt="Integrante 2" class="w-full h-full object-cover transition-transform transform group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-semibold">Jane Smith</h3>
+                            <p class="text-lg">Baterista</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Integrante 3 -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden rounded-full w-48 h-48 mx-auto">
+                        <img src="../img/img2.jpg" alt="Integrante 3" class="w-full h-full object-cover transition-transform transform group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-semibold">Mike Johnson</h3>
+                            <p class="text-lg">Bajista</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Integrante 4 -->
+                <div class="group relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="overflow-hidden rounded-full w-48 h-48 mx-auto">
+                        <img src="../img/img2.jpg" alt="Integrante 3" class="w-full h-full object-cover transition-transform transform group-hover:scale-110">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="text-white text-center">
+                            <h3 class="text-2xl font-semibold">Mike Johnson</h3>
+                            <p class="text-lg">Bajista</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trayecto Section -->
+        <section class="py-16 px-4" data-aos="fade-up">
+            <h2 class="text-4xl font-bold text-orange-600 text-center mb-8">Nuestra Trayectoria</h2>
+            <div class="relative">
+                <div class="absolute left-52 transform -translate-x-1/2 h-full border-l-4 border-dashed border-white"></div>
+                <div class="flex justify-center">
+                    <div class="space-y-12">
+                        <!-- Evento 1 -->
+                        <div class="flex items-center space-x-8" data-aos="fade-right">
+                            <div class="relative">
+                                <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-full absolute -left-16 border-4 border-white">
+                                    <span>2019</span>
+                                </div>
+                                <div class="text-left ml-20">
+                                    <h3 class="text-2xl font-semibold text-orange-600">Primer Concierto en el Centro Cultural</h3>
+                                    <p class="mt-2 text-gray-300">Nuestra agrupación debutó en el Centro Cultural de la ciudad...</p>
+                                </div>
+                            </div>
+                            <img class="w-32 h-32 object-cover rounded-full shadow-lg" src="../img/img3.jpg" alt="Concierto 2019">
+                        </div>
+                        <!-- Evento 2 -->
+                        <div class="flex items-center space-x-8" data-aos="fade-left">
+                            <div class="relative">
+                                <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-full absolute -left-16 border-4 border-white">
+                                    <span>2020</span>
+                                </div>
+                                <div class="text-left ml-20">
+                                    <h3 class="text-2xl font-semibold text-orange-600">Lanzamiento de Nuestro Primer Álbum</h3>
+                                    <p class="mt-2 text-gray-300">El lanzamiento de nuestro primer álbum fue un gran éxito...</p>
+                                </div>
+                            </div>
+                            <img class="w-32 h-32 object-cover rounded-full shadow-lg" src="../img/img3.jpg" alt="Lanzamiento Álbum">
+                        </div>
+                        <!-- Evento 3 -->
+                        <div class="flex items-center space-x-8" data-aos="fade-right">
+                            <div class="relative">
+                                <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-full absolute -left-16 border-4 border-white">
+                                    <span>2021</span>
+                                </div>
+                                <div class="text-left ml-20">
+                                    <h3 class="text-2xl font-semibold text-orange-600">Gira Nacional</h3>
+                                    <p class="mt-2 text-gray-300">Nuestra gira nacional nos llevó a diferentes ciudades...</p>
+                                </div>
+                            </div>
+                            <img class="w-32 h-32 object-cover rounded-full shadow-lg" src="../img/img3.jpg" alt="Gira Nacional">
+                        </div>
+                        <!-- Evento 4 -->
+                        <div class="flex items-center space-x-8" data-aos="fade-left">
+                            <div class="relative">
+                                <div class="w-12 h-12 bg-orange-500 text-white flex items-center justify-center rounded-full absolute -left-16 border-4 border-white">
+                                    <span>2022</span>
+                                </div>
+                                <div class="text-left ml-20">
+                                    <h3 class="text-2xl font-semibold text-orange-600">Participación en el Festival XYZ</h3>
+                                    <p class="mt-2 text-gray-300">Tuvimos el honor de participar en el Festival XYZ, donde compartimos escenario con...</p>
+                                </div>
+                            </div>
+                            <img class="w-32 h-32 object-cover rounded-full shadow-lg" src="../img/img3.jpg" alt="Festival XYZ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Música Section -->
+        <section class="py-16 bg-gray-900 text-white" data-aos="fade-up">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-orange-600 mb-4">Escucha Nuestra Música</h2>
+                <p class="text-xl text-gray-400 mb-8">Últimos lanzamientos</p>
+                
+                <!-- Lanzamientos en fila -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+                    <!-- Primer lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/TU-ALBUM-ID-1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <p class="text-lg text-gray-400 mt-2">Título del Álbum 1</p>
+                    </div>
+
+                    <!-- Segundo lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/TU-ALBUM-ID-2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <p class="text-lg text-gray-400 mt-2">Título del Álbum 2</p>
+                    </div>
+
+                    <!-- Tercer lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/TU-ALBUM-ID-3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <p class="text-lg text-gray-400 mt-2">Título del Álbum 3</p>
+                    </div>
+                </div>
+                
+                <!-- Subtítulo para tiendas preferidas -->
+                <p class="text-xl text-gray-400 mt-8">Escúchanos en tus tiendas preferidas</p>
+                
+                <!-- Iconos de tiendas musicales -->
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="https://open.spotify.com/artist/TU-SPOTIFY-ARTIST-ID" target="_blank">
+                        <i class="fab fa-spotify fa-3x text-white hover:text-green-400"></i>
+                    </a>
+                    <a href="https://music.apple.com/artist/TU-APPLE-MUSIC-ARTIST-ID" target="_blank">
+                        <i class="fab fa-apple fa-3x text-white hover:text-gray-300"></i>
+                    </a>
+                    <a href="https://music.youtube.com/channel/TU-YOUTUBE-CHANNEL-ID" target="_blank">
+                        <i class="fab fa-youtube fa-3x text-white hover:text-red-400"></i>
+                    </a>
+                    <a href="https://music.amazon.com/artists/TU-AMAZON-MUSIC-ARTIST-ID" target="_blank">
+                        <i class="fab fa-amazon fa-3x text-white hover:text-yellow-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="md:col-span-2">
+                        <h2 class="text-2xl font-bold mb-4">Cuerdabajo</h2>
+                        <p class="text-gray-300 mb-4">Cuerdabajo es un grupo musical innovador que fusiona ritmos latinos con sonidos contemporáneos, creando una experiencia musical única y envolvente.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Enlaces</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-pink-400 transition duration-300">Inicio</a></li>
+                            <li><a href="#" class="hover:text-pink-400 transition duration-300">Servicios</a></li>
+                            <li><a href="#" class="hover:text-pink-400 transition duration-300">Nosotros</a></li>
+                            <li><a href="#" class="hover:text-pink-400 transition duration-300">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Síguenos</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-300 hover:text-blue-500 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-pink-500 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                            </a>
+                            <a href="#" class="text-gray-300 hover:text-blue-400 transition duration-300">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 border-t border-gray-700 pt-8">
+                    <form class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4">Suscríbete a nuestro boletín</h3>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="email" placeholder="Tu correo electrónico" class="flex-grow px-4 py-2 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500" required>
+                            <button type="submit" class="px-6 py-2 bg-yellow-500 text-gray-900 rounded-md hover:bg-pink-500 transition duration-300 font-semibold">Suscribirse</button>
+                        </div>
+                    </form>
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="text-gray-400 mb-4 md:mb-0">
+                            <p>Teléfono: +34 123 456 789</p>
+                            <p>Email: info@cuerdabajo.com</p>
+                        </div>
+                        <p class="text-gray-400">&copy; 2024 Cuerdabajo. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="../portafolio/portafolio.js"></script>
+
+        <!-- AOS script -->
+
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            AOS.init();
+        </script>
+    </body>
+    </html>
