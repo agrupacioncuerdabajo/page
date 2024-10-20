@@ -17,6 +17,7 @@
     }
 
     /* Estilos de degradado */
+
     .gradient-text {
         background: linear-gradient(145deg, #ffffff, #e1dfdf, #ffffff, #d0d0d0);
         -webkit-background-clip: text;
@@ -25,6 +26,7 @@
         font-weight: 900;
         font-size: 20rem;
     }
+
     
     /* Posicionamiento y márgenes */
     #text1 {
@@ -49,7 +51,18 @@
         bottom: 200px;
         left: 50px;
     }
-
+    @media (max-width:  640px) {
+        .gradient-text {
+            font-size: 5rem;
+        }
+        #text1 {
+            display: none;
+        }
+    
+        #text2 {
+            display: none;
+        }
+    }
     #product {
         top: 50%;
         right: 100px;
@@ -106,4 +119,35 @@
     .social-icons a:hover {
         color: #f0f0f0; /* Cambia el color al pasar el ratón */
     }
+    .header-transition {
+        transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+    }
+    #desktop-menu {
+        display: none; /* Oculta el menú por defecto */
+    }
     
+    /* Muestra el menú en pantallas grandes */
+    @media (min-width: 1024px) {
+        #desktop-menu {
+            display: flex; /* Muestra el menú en pantallas grandes */
+        }
+    }
+    /* Estilos por defecto para los enlaces del menú */
+    nav a {
+        color: white; /* Color inicial */
+    }
+    
+    /* Cambiar color al hacer hover */
+    nav a:hover {
+        color: yellow; /* Color por defecto en hover */
+    }
+    
+    /* Cambiar el color de los enlaces cuando el encabezado está scrolleado */
+    .header-scrolled nav a {
+        color: rgb(255, 255, 255); /* Color de texto del menú cuando el fondo cambia */
+    }
+    
+    /* Cambiar el color del hover cuando el encabezado está scrolleado */
+    .header-scrolled nav a:hover {
+        color: yellow; /* Color de hover cuando el fondo está activado */
+    }

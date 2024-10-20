@@ -36,7 +36,7 @@ const products = [
         duration: "1 hora", 
         price: "Con servicio de sonido: $350,000 - Sin servicio de sonido: $300,000", 
         vidyt: "https://www.youtube.com/embed/OIymNUeuJIA?si=PBuNS7uuIK_Ju6xz",
-        image: "../img/img.jpg"
+        image: "https://i.postimg.cc/rwgvbsz5/img-4.jpg" // Nueva imagen aleatoria
     },
     { 
         id: 2, 
@@ -45,7 +45,7 @@ const products = [
         duration: "1 hora", 
         price: "Con servicio de sonido: $350,000 - Sin servicio de sonido: $300,000", 
         vidyt: "https://www.youtube.com/embed/f81I3x0BKH4?start=7&si=HSxCHnkCQvXgMe1Y",
-        image: "../img/img2.jpg"
+        image: "https://i.postimg.cc/cLQJ8Q90/img-6.jpg" // Nueva imagen aleatoria
     },
     { 
         id: 3, 
@@ -54,7 +54,7 @@ const products = [
         duration: "1 hora", 
         price: "Con servicio de sonido: $600,000 - Sin servicio de sonido: $500,000", 
         vidyt: "https://www.youtube.com/embed/UJvBnxgmWd8?start=12&si=NjaDvYwpBkfTqTbx",
-        image: "../img/img3.jpg"
+        image: "https://i.postimg.cc/MH8PXJvW/img-2.jpg" // Nueva imagen aleatoria
     },
     { 
         id: 4, 
@@ -63,7 +63,7 @@ const products = [
         duration: "1 hora", 
         price: "Con servicio de sonido: $400,000 - Sin servicio de sonido: $350,000", 
         vidyt: "https://www.youtube.com/embed/J9Fay9smjkg",
-        image: "../img/img2.jpg"
+        image: "https://i.postimg.cc/t4tXg9Jg/img-7.jpg" // Nueva imagen aleatoria
     },
     { 
         id: 5, 
@@ -72,9 +72,10 @@ const products = [
         duration: "1 hora", 
         price: "Con servicio de sonido: $450,000 - Sin servicio de sonido: $400,000", 
         vidyt: "https://www.youtube.com/embed/8f4lUn_jnIk",
-        image: "../img/img.jpg"
+        image: "https://i.postimg.cc/Y2YQMyYC/img-15.jpg" // Nueva imagen aleatoria
     }
 ];
+
 
 const productsGrid = document.getElementById('products-grid');
 const productInfo = document.getElementById('product-info');
@@ -110,7 +111,7 @@ function renderProducts() {
     // Crear tarjetas para los productos visibles
     visibleProducts.forEach((product) => {
         const card = document.createElement('div');
-        card.classList.add("bg-white", "shadow-xl", "overflow-hidden", "transition-transform", "duration-300", "hover:scale-105", "focus-within:ring-2", "focus-within:ring-pink-500");
+        card.classList.add("bg-gray-900",'text-white', "shadow-xl", "overflow-hidden", "transition-transform", "duration-300", "hover:scale-105", "focus-within:ring-2", "focus-within:ring-pink-500", 'rounded-lg');
         card.setAttribute("tabindex", "0");
 
         const img = document.createElement('img');
@@ -140,7 +141,7 @@ function renderProducts() {
             videoIframe.src = product.vidyt;
         
             // Solo desplazar la página hasta el video si la pantalla es de tamaño móvil
-            if (window.innerWidth <= 768) { // Ajusta el valor del ancho según necesites
+            if (window.innerWidth <= 768) {
                 const videoSection = document.querySelector('#video-iframe');
                 videoSection.scrollIntoView({ behavior: 'smooth' });
             }
@@ -169,7 +170,7 @@ function renderPagination() {
     if (currentPage > 1) {
         const prevButton = document.createElement('button');
         prevButton.textContent = 'Anterior';
-        prevButton.classList.add('px-4', 'py-2', 'bg-gray-300', 'hover:bg-gray-400', 'text-gray-800', 'rounded-l', 'mr-2'); // Aquí se agrega 'mr-2'
+        prevButton.classList.add('px-4', 'py-2', 'bg-gray-300', 'hover:bg-gray-400', 'text-gray-800', 'rounded-l', 'mr-2');
         prevButton.addEventListener('click', () => {
             currentPage--;
             renderProducts();
