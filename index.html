@@ -83,9 +83,10 @@
         <p class="mt-4 text-4xl">Agrupación Musical Tropical y Parrandera para Todo Tipo de Eventos</p>
     </div>  
 
-    <a id="buy-button" href="#" class="parallax inline-block text-4xl font-semibold text-white bg-gray-900 py-2 px-6 rounded-full hover:bg-gray-900 transition drop-shadow-xl">
+    <a id="buy-button" href="https://wa.me/3135651518" class="parallax inline-block text-4xl font-semibold text-white bg-gray-900 py-2 px-6 rounded-full drop-shadow-xl transition-all duration-300 ease-in-out transform hover:bg-transparent hover:text-gray-900 hover:border-gray-900 hover:border hover:scale-105">
         Te interesa? →
     </a>
+    
 
     <!-- Botón de WhatsApp -->
     <a href="https://wa.me/3135651518" class="whatsapp-button z-50" target="_blank">
@@ -94,136 +95,18 @@
 
     <!-- Sección de redes sociales -->
     <div class="social-icons left-10 z-50">
-        <a href="https://facebook.com" target="_blank">
+        <a href="https://www.facebook.com/profile.php?id=100087781704883" target="_blank">
             <i class="fab fa-facebook-f hover:text-gray-900 transition drop-shadow-xl"></i>
         </a>
-        <a href="https://instagram.com" target="_blank">
+        <a href="https://www.instagram.com/agrupacion_cuerdabajo/" target="_blank">
             <i class="fab fa-instagram hover:text-gray-900 transition drop-shadow-xl"></i>
         </a>
-        <a href="https://twitter.com" target="_blank">
-            <i class="fab fa-twitter hover:text-gray-900 transition drop-shadow-xl"></i>
+        <a href="https://www.youtube.com/@agrupacioncuerdabajo" target="_blank">
+            <i class="fab fa-youtube hover:text-gray-900 transition drop-shadow-xl"></i>
         </a>
     </div>
 
     <!-- Script para cargar el modelo 3D y aplicar Parallax -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const dropdownMenu = document.getElementById('dropdown-menu');
-
-        menuToggle.addEventListener('click', function() {
-            dropdownMenu.classList.toggle('hidden');
-        });
-        // Configuración inicial de Three.js
-        let scene = new THREE.Scene();
-        let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        let renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('3d-canvas'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        camera.position.z = 5; // Distancia de la cámara
-        
-
-        // Crear la luz hemisférica (fuente de luz 1 - naranja)
-        const hemiLight = new THREE.HemisphereLight(0xfd9904, 0x404040, 0.5); // Luz hemisférica naranja
-        hemiLight.position.set(0, 10, 0); // Posición de la luz hemisférica
-        scene.add(hemiLight);
-
-        // Crear una luz direccional (fuente de luz 2 - roja)
-        const directionalLight = new THREE.DirectionalLight(0xff0000, 1); // Luz direccional roja
-        directionalLight.position.set(10, 10, 5).normalize(); // Posición de la luz direccional
-        directionalLight.castShadow = true; // Habilitar sombras
-        scene.add(directionalLight);
-
-        // Crear luz blanca frontal (fuente de luz 3)
-        const frontLight = new THREE.DirectionalLight(0xffffff, 1); // Luz direccional blanca
-        frontLight.position.set(0, 5, 10).normalize(); // Posición de la luz blanca frontal
-        frontLight.castShadow = true; // Habilitar sombras
-        scene.add(frontLight);
-
-        // Crear luz ambiental para suavizar la iluminación
-        const ambientLight = new THREE.AmbientLight(0x404040, 0.3); // Luz ambiental suave
-        scene.add(ambientLight);
-
-
-        // Carga del modelo 3D GLTF/GLB
-        let loader = new THREE.GLTFLoader();
-        let model;
-        loader.load('img/icon.glb', function(gltf) {
-            model = gltf.scene;
-            scene.add(model);
-        
-            model.scale.set(3.5, 3.8, 3.5);
-        
-            model.rotation.x = Math.PI / 9; 
-            model.rotation.y = Math.PI / 0.9; 
-            model.rotation.z = 0; 
-        
-            initialRotationX = model.rotation.x;
-            initialRotationY = model.rotation.y;
-        
-            model.position.set(2.5, 0, 0);
-
-            function adjustModelPosition() {
-                if (window.innerWidth < 640) {
-                    model.scale.set(3,3,3);
-                    model.position.set(0.8, 0.8, 0);
-                } else {
-                    model.position.set(2.5, 0, 0);
-                }
-            }
-        
-            window.addEventListener('resize', adjustModelPosition);
-            adjustModelPosition()
-
-        }, undefined, function(error) {
-            console.error(error);
-        });
-
-        // Variables para controlar el movimiento del modelo 3D
-        let targetRotationX = 0; // Rotación objetivo en el eje X
-        let targetRotationY = 0; // Rotación objetivo en el eje Y
-        let rotationSpeed = 0.05; // Velocidad de rotación suave
-
-        const minRotationX = -Math.PI / 4; // Límite mínimo para el eje X
-        const maxRotationX = Math.PI / 4;  // Límite máximo para el eje X
-        const minRotationY = -Math.PI / 2; // Límite mínimo para el eje Y
-        const maxRotationY = Math.PI / 2;  // Límite máximo para el eje Y
-        // Detectar el movimiento del mouse
-        document.addEventListener('mousemove', (event) => {
-            const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-            const mouseY = (event.clientY / window.innerHeight) * 2 - 1;
-
-            // Ajustar las rotaciones inversamente a los movimientos del mouse
-            targetRotationX = mouseY * 0.5; // Ajusta la sensibilidad del eje X
-            targetRotationY = mouseX * 0.5; // Ajusta la sensibilidad del eje Y
-        });
-
-        // Animación y renderizado
-        function animate() {
-            requestAnimationFrame(animate);
-
-            if (model) {
-                // Mantén las rotaciones iniciales y añade el ajuste del mouse
-                model.rotation.x += ((initialRotationX + targetRotationX) - model.rotation.x) * rotationSpeed;
-                model.rotation.y += ((initialRotationY + targetRotationY) - model.rotation.y) * rotationSpeed;
-
-                model.rotation.x = Math.max(minRotationX, Math.min(maxRotationX, model.rotation.x));            }
-
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Efecto parallax
-        document.addEventListener('mousemove', (event) => {
-            const x = (window.innerWidth - event.pageX) / 100;
-            const y = (window.innerHeight - event.pageY) / 100;
-
-            // Parallax en otros elementos
-            document.getElementById('text1').style.transform = `translate(${x * 2}px, ${y * 2}px)`;
-            document.getElementById('text2').style.transform = `translate(${x * 3}px, ${y * 2}px)`;
-            document.getElementById('text3').style.transform = `translate(${x * 2}px, ${y * 4}px)`;
-            document.getElementById('buy-button').style.transform = `translate(${x * 2}px, ${y * 2}px)`;
-        });
-    </script>
+    <script src="js/index.js"></script>
 </body>
 </html>

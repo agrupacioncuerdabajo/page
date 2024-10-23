@@ -50,31 +50,46 @@
     #buy-button {
         bottom: 200px;
         left: 50px;
+        z-index: 30;
+        
     }
+    #buy-button a{
+        cursor: pointer;
+    }
+    
     @media (max-width:  640px) {
         .gradient-text {
             font-size: 5rem;
         }
         #text1 {
-            display: none;
+            top: 15%;
+            left: 20%;
+            font-size: 5rem;
+            
         }
     
         #text2 {
-            display: none;
+            top: 23%;
+            font-size: 5rem;
+            max-width: 40%;
+            left:25%;
         }
-    }
-    #product {
-        top: 50%;
-        right: 100px;
-        transform: translateY(-50%);
+        #text3 {
+            max-width: 80%;
+            font-size: 1rem;
+            top: 40%;
+            text-align: center;
+        }
+        #text3 p{
+            font-size: 1.8rem;
+            line-height: 100%;
+        }
+        #buy-button {
+            bottom: 25%;
+            left: 20%;
+        }
     }
 
-    /* Estilos para asegurar la correcta presentación en móviles y desktop */
-    @media (min-width: 768px) {
-        #product {
-            max-width: 400px;
-        }
-    }
      /* Estilo para el botón de WhatsApp vibrante */
      .whatsapp-button {
         position: fixed;
