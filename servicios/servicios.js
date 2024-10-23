@@ -111,7 +111,7 @@ function renderProducts() {
     // Crear tarjetas para los productos visibles
     visibleProducts.forEach((product) => {
         const card = document.createElement('div');
-        card.classList.add("bg-gray-900",'text-white', "shadow-xl", "overflow-hidden", "transition-transform", "duration-300", "hover:scale-105", "focus-within:ring-2", "focus-within:ring-pink-500", 'rounded-lg');
+        card.classList.add("bg-gray-900",'text-white', "shadow-xl", "overflow-hidden", "transition-transform", "duration-300", "hover:scale-105", "focus-within:ring-2", "focus-within:ring-yellow-500", 'rounded-lg');
         card.setAttribute("tabindex", "0");
 
         const img = document.createElement('img');
