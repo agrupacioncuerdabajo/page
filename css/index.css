@@ -38,7 +38,7 @@
     #text2 {
         bottom: 20px;
         right: 100px;
-        max-width: 50%;
+        max-width: 52%;
     }
 
     #text3 {
@@ -166,3 +166,10 @@
     .header-scrolled nav a:hover {
         color: yellow; /* Color de hover cuando el fondo está activado */
     }
+
+
+
+
+
+
+
