@@ -38,7 +38,7 @@
     #text2 {
         bottom: 20px;
         right: 100px;
-        max-width: 55%;
+        max-width: 100%;
     }
 
     #text3 {
@@ -71,8 +71,8 @@
         #text2 {
             top: 23%;
             font-size: 5rem;
-            max-width: 40%;
-            left:25%;
+            max-width: 50%;
+            left:12%;
         }
         #text3 {
             max-width: 80%;
