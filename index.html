@@ -145,7 +145,7 @@ scene.add(ambientLight);
 // Carga del modelo 3D GLTF/GLB
 let loader = new THREE.GLTFLoader();
 let model;
-loader.load('/js/icon.glb', function(gltf) {
+loader.load('js/icon.glb', function(gltf) {
     model = gltf.scene;
     scene.add(model);
 
