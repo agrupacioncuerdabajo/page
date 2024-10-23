@@ -8,8 +8,6 @@ menuToggle.addEventListener('click', function() {
 });
 
 
-
-
 // Efecto parallax
 
 // Funciones de efecto parallax para cada tipo de pantalla
@@ -39,6 +37,22 @@ function parallaxTilt(event) {
     document.getElementById('buy-button').style.transform = `translate(${x * 1}px, ${y * 1}px)`;
 }
 
+// Solicitar permiso para el uso del giroscopio en móviles
+function solicitarPermisoGiroscopio() {
+    if (typeof DeviceMotionEvent !== 'undefined' && typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceMotionEvent.requestPermission()
+            .then(permissionState => {
+                if (permissionState === 'granted') {
+                    window.addEventListener('deviceorientation', parallaxTilt);
+                }
+            })
+            .catch(console.error);
+    } else {
+        // Si el navegador no requiere permisos, activar directamente el parallax
+        window.addEventListener('deviceorientation', parallaxTilt);
+    }
+}
+
 // Verificar el tamaño de la pantalla y activar parallax
 function activarParallax() {
     // Eliminar todos los eventos de parallax existentes
@@ -49,8 +63,8 @@ function activarParallax() {
     if (window.innerWidth > 768) {
         document.addEventListener('mousemove', parallaxMouse);
     } else {
-        // Activar parallax basado en inclinación para pantallas pequeñas
-        window.addEventListener('deviceorientation', parallaxTilt);
+        // Activar parallax basado en giroscopio para pantallas pequeñas
+        solicitarPermisoGiroscopio();
     }
 }
 
