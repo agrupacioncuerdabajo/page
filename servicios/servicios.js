@@ -31,50 +31,33 @@ menuToggle.addEventListener('click', function() {
 const products = [
     { 
         id: 1, 
-        title: "Música Carranguera", 
-        description: "Disfruta de un show de una hora con la mejor música carranguera para bailar.", 
+        title: "Repertorio de Carranga", 
+        description: "¡Éxitos de Jorge Velosa, Los Dotores de la Carranga y más!", 
         duration: "1 hora", 
-        price: "Con servicio de sonido: $350,000 - Sin servicio de sonido: $300,000", 
-        vidyt: "https://www.youtube.com/embed/OIymNUeuJIA?si=PBuNS7uuIK_Ju6xz",
-        image: "https://i.postimg.cc/rwgvbsz5/img-4.jpg" // Nueva imagen aleatoria
+        price: "Con servicio de sonido: $420,000 - Sin servicio de sonido: $350,000", 
+        vidyt: "https://www.youtube.com/embed/ah5zu6m67oY?si=EXwAwUjm64LFWL3y",
+        image: "https://i.postimg.cc/rwgvbsz5/img-4.jpg"
     },
     { 
         id: 2, 
-        title: "Música Parrandera", 
-        description: "Un show vibrante con la mejor música parrandera bailable.", 
+        title: "Repertorio Tropical", 
+        description: "¡Éxitos de Pastor López, Rodolfo Aicardi, Afrosound y más!", 
         duration: "1 hora", 
-        price: "Con servicio de sonido: $350,000 - Sin servicio de sonido: $300,000", 
-        vidyt: "https://www.youtube.com/embed/f81I3x0BKH4?start=7&si=HSxCHnkCQvXgMe1Y",
-        image: "https://i.postimg.cc/cLQJ8Q90/img-6.jpg" // Nueva imagen aleatoria
+        price: "Con servicio de sonido: $680,000 - Sin servicio de sonido: $600,000", 
+        vidyt: "https://www.youtube.com/embed/ynEOqTfmcUc?si=fOZVjYxcfCCzAB7g",
+        image: "https://i.postimg.cc/cLQJ8Q90/img-6.jpg"
     },
     { 
         id: 3, 
-        title: "Música Dicembrina", 
-        description: "Celebra la temporada con el mejor show de música de diciembre.", 
+        title: "Repertorio Parrandero", 
+        description: "¡Éxitos de Los 50 de Joselito, Octavio Mesa, Guillermo Buitrago y más!", 
         duration: "1 hora", 
-        price: "Con servicio de sonido: $600,000 - Sin servicio de sonido: $500,000", 
-        vidyt: "https://www.youtube.com/embed/UJvBnxgmWd8?start=12&si=NjaDvYwpBkfTqTbx",
-        image: "https://i.postimg.cc/MH8PXJvW/img-2.jpg" // Nueva imagen aleatoria
-    },
-    { 
-        id: 4, 
-        title: "Música Tropical", 
-        description: "Disfruta de una fiesta tropical con ritmos alegres y bailables.", 
-        duration: "1 hora", 
-        price: "Con servicio de sonido: $400,000 - Sin servicio de sonido: $350,000", 
-        vidyt: "https://www.youtube.com/embed/J9Fay9smjkg",
-        image: "https://i.postimg.cc/t4tXg9Jg/img-7.jpg" // Nueva imagen aleatoria
-    },
-    { 
-        id: 5, 
-        title: "Música Vallenata", 
-        description: "Una hora de música vallenata para disfrutar en cualquier ocasión.", 
-        duration: "1 hora", 
-        price: "Con servicio de sonido: $450,000 - Sin servicio de sonido: $400,000", 
-        vidyt: "https://www.youtube.com/embed/8f4lUn_jnIk",
-        image: "https://i.postimg.cc/Y2YQMyYC/img-15.jpg" // Nueva imagen aleatoria
+        price: "Con servicio de sonido: $450,000 - Sin servicio de sonido: $380,000", 
+        vidyt: "https://www.youtube.com/embed/e-fDUXGVazA?si=KeEvctmGWle_h7zt",
+        image: "https://i.postimg.cc/MH8PXJvW/img-2.jpg"
     }
 ];
+
 
 
 const productsGrid = document.getElementById('products-grid');

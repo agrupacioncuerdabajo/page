@@ -1,0 +1,44 @@
+<section class="py-16 bg-gray-900 text-white" data-aos="fade-up">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-orange-600 mb-4">Escucha Nuestra Música</h2>
+                <p class="text-xl text-gray-400 mb-8">Últimos lanzamientos</p>
+                
+                <!-- Lanzamientos en fila -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+                    <!-- Primer lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7JnD2UVjydwcHm78ntxGoD?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+        
+                    <!-- Segundo lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0L1OyRg7ZarhvQcDcf6VPa?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+        
+                    <!-- Tercer lanzamiento -->
+                    <div>
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7bBGSiuF02HtkG7Xggj4Dh?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+                    </div>
+                </div>
+                
+                <!-- Subtítulo para tiendas preferidas -->
+                <p class="text-xl text-gray-400 mt-8">Escúchanos en tus tiendas preferidas</p>
+                
+                <!-- Iconos de tiendas musicales -->
+                <div class="flex justify-center space-x-6 mt-4">
+                    <a href="https://open.spotify.com/artist/TU-SPOTIFY-ARTIST-ID" target="_blank">
+                        <i class="fab fa-spotify fa-3x text-white hover:text-green-400"></i>
+                    </a>
+                    <a href="https://music.apple.com/artist/TU-APPLE-MUSIC-ARTIST-ID" target="_blank">
+                        <i class="fab fa-apple fa-3x text-white hover:text-gray-300"></i>
+                    </a>
+                    <a href="https://music.youtube.com/channel/TU-YOUTUBE-CHANNEL-ID" target="_blank">
+                        <i class="fab fa-youtube fa-3x text-white hover:text-red-400"></i>
+                    </a>
+                    <a href="https://music.amazon.com/artists/TU-AMAZON-MUSIC-ARTIST-ID" target="_blank">
+                        <i class="fab fa-amazon fa-3x text-white hover:text-yellow-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
